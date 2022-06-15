@@ -1,3 +1,4 @@
+import 'package:doctor_demo/pages/intro_pages/intro_page.dart';
 import 'package:doctor_demo/pages/intro_pages/intro_page1.dart';
 import 'package:doctor_demo/pages/intro_pages/intro_page2.dart';
 import 'package:doctor_demo/pages/intro_pages/intro_page3.dart';
@@ -29,10 +30,11 @@ class _WelcomePageState extends State<WelcomePage> {
             controller: _controller,
             onPageChanged: (index) {
               setState(() {
-                onLastPage = (index == 2);
+                onLastPage = (index == 3);
               });
             },
-            children: [
+            children: const [
+              IntroPage(),
               IntroPage1(),
               IntroPage2(),
               IntroPage3(),
@@ -61,8 +63,8 @@ class _WelcomePageState extends State<WelcomePage> {
                 // dot indicators
                 SmoothPageIndicator(
                   controller: _controller,
-                  count: 3,
-                  effect: WormEffect(
+                  count: 4,
+                  effect: const WormEffect(
                     dotHeight: 12,
                     dotWidth: 12,
                   ),
