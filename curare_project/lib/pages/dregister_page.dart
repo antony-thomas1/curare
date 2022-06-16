@@ -26,6 +26,7 @@ class _DRegisterPageState extends State<DRegisterPage> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     const Text(
+                      // Patient Signup
                       'Patient ',
                       style: TextStyle(
                         fontSize: 18,
@@ -57,7 +58,7 @@ class _DRegisterPageState extends State<DRegisterPage> {
                 const SizedBox(
                   height: 10,
                 ),
-
+                // Top Image
                 Image.asset(
                   'lib/assets/physician.png',
                   scale: 3,
@@ -65,7 +66,7 @@ class _DRegisterPageState extends State<DRegisterPage> {
                 const SizedBox(
                   height: 10,
                 ),
-
+                // Top Text
                 const Text(
                   'Doctor Sign Up',
                   style: TextStyle(
@@ -231,6 +232,7 @@ class _DRegisterPageState extends State<DRegisterPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     GestureDetector(
+                      // Google Sign up
                       onTap: () {},
                       child: Image.asset(
                         'lib/assets/google.png',
@@ -241,6 +243,7 @@ class _DRegisterPageState extends State<DRegisterPage> {
                       width: 40,
                     ),
                     GestureDetector(
+                      // Facebook Signup
                       onTap: () {},
                       child: Image.asset(
                         'lib/assets/facebook.png',

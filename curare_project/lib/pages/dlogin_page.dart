@@ -21,6 +21,7 @@ class _DLoginPageState extends State<DLoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                // Top Image
                 Image.asset(
                   'lib/assets/medical-app3.png',
                   scale: 3,
@@ -29,6 +30,7 @@ class _DLoginPageState extends State<DLoginPage> {
                 const SizedBox(
                   height: 20,
                 ),
+                // Top Text
                 const Text(
                   'Doctor Sign in',
                   style: TextStyle(
@@ -101,7 +103,7 @@ class _DLoginPageState extends State<DLoginPage> {
                       padding: EdgeInsets.only(right: 30),
                       child: GestureDetector(
                         onTap: () {},
-                        child: Text(
+                        child: const Text(
                           'Forgot password?',
                           style: TextStyle(
                             fontSize: 17,
@@ -195,6 +197,7 @@ class _DLoginPageState extends State<DLoginPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     GestureDetector(
+                      // Google Login
                       onTap: () {},
                       child: Image.asset(
                         'lib/assets/google.png',
@@ -207,6 +210,7 @@ class _DLoginPageState extends State<DLoginPage> {
                     GestureDetector(
                       onTap: () {},
                       child: Image.asset(
+                        // Facebook Login
                         'lib/assets/facebook.png',
                         scale: 9,
                       ),

@@ -1,8 +1,6 @@
-import 'dart:ui';
-
 import 'package:doctor_demo/pages/pregister_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:slide_to_act/slide_to_act.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({Key? key}) : super(key: key);
@@ -10,13 +8,13 @@ class IntroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      //alignment: Alignment.center,
       color: Color.fromARGB(255, 11, 79, 195),
       child: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // Welcome Text
               const SizedBox(
                 height: 50,
               ),
@@ -56,47 +54,25 @@ class IntroPage extends StatelessWidget {
               Image.asset('lib/assets/dmedical.png'),
               // for slidable get start
               Padding(
-                padding: const EdgeInsets.all(30),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Slidable(
-                    startActionPane: ActionPane(
-                      motion: BehindMotion(),
-                      children: [
-                        SlidableAction(
-                          onPressed: (context) {
-                            // do some action
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => PRegisterPage()));
-                          },
-                          backgroundColor: Colors.green,
-                          icon: Icons.arrow_forward_ios_rounded,
-                        ),
-                      ],
-                    ),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.grey[800],
-                      ),
-                      child: const ListTile(
-                        title: Text(
-                          'Get Started',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 17,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        trailing: Icon(
-                          Icons.arrow_circle_right_rounded,
-                          size: 35,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
+                padding: const EdgeInsets.all(20),
+                child: SlideAction(
+                  borderRadius: 12,
+                  innerColor: Colors.white,
+                  outerColor: Colors.grey[800],
+                  text: 'Slide to Get Started',
+                  textStyle: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                   ),
+                  sliderRotate: false,
+                  onSubmit: () {
+                    // Navigate to Patient Sign up
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const PRegisterPage()));
+                  },
                 ),
               ),
             ],

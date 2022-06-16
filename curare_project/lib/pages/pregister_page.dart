@@ -29,6 +29,7 @@ class _PRegisterPageState extends State<PRegisterPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
+                    // Doctor Sign up navigation
                     const Text(
                       'Doctor ',
                       style: TextStyle(
@@ -61,7 +62,7 @@ class _PRegisterPageState extends State<PRegisterPage> {
                 const SizedBox(
                   height: 10,
                 ),
-
+                // Top Image
                 Image.asset(
                   'lib/assets/health-app.png',
                   scale: 3,
@@ -69,7 +70,7 @@ class _PRegisterPageState extends State<PRegisterPage> {
                 const SizedBox(
                   height: 10,
                 ),
-
+                // Top Text
                 const Text(
                   'Patient Sign Up',
                   style: TextStyle(
@@ -232,6 +233,7 @@ class _PRegisterPageState extends State<PRegisterPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    // Google Signup
                     GestureDetector(
                       onTap: () {},
                       child: Image.asset(
@@ -243,6 +245,7 @@ class _PRegisterPageState extends State<PRegisterPage> {
                       width: 40,
                     ),
                     GestureDetector(
+                      // Facebook Signup
                       onTap: () {},
                       child: Image.asset(
                         'lib/assets/facebook.png',

@@ -25,6 +25,7 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                // Top Image
                 Image.asset(
                   'lib/assets/online-registration.png',
                   scale: 3,
@@ -101,6 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   // ignore: prefer_const_literals_to_create_immutables
                   children: [
+                    // Forgot Password Text(clickable?)
                     Padding(
                       padding: EdgeInsets.only(right: 30),
                       child: GestureDetector(
@@ -126,7 +128,6 @@ class _LoginPageState extends State<LoginPage> {
                     horizontal: 25,
                   ),
                   child: GestureDetector(
-                    // onTap: signIn,
                     child: Container(
                       padding: const EdgeInsets.all(18),
                       decoration: BoxDecoration(
@@ -201,6 +202,7 @@ class _LoginPageState extends State<LoginPage> {
                     GestureDetector(
                       onTap: () {},
                       child: Image.asset(
+                        // Google Login
                         'lib/assets/google.png',
                         scale: 9,
                       ),
@@ -211,6 +213,7 @@ class _LoginPageState extends State<LoginPage> {
                     GestureDetector(
                       onTap: () {},
                       child: Image.asset(
+                        // Facebook Login
                         'lib/assets/facebook.png',
                         scale: 9,
                       ),
