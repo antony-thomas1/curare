@@ -1,4 +1,4 @@
-# doctor_demo
+# Curare_project
 
 A new Flutter project.
 
