@@ -22,52 +22,55 @@ class _DRegisterPageState extends State<DRegisterPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pop(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => PRegisterPage()));
-                  },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        child: Container(
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                              color: Colors.blue,
-                              border: Border.all(color: Colors.white),
-                              borderRadius: BorderRadius.circular(10)),
-                          child: const Text(
-                            'Patient Sign up',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    const Text(
+                      'Patient ',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const PRegisterPage()));
+                      },
+                      child: const Text(
+                        'Sign up',
+                        style: TextStyle(
+                          fontSize: 19,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue,
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                  ],
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
+
                 Image.asset(
-                  'lib/assets/doctor2.png',
-                  scale: 2.7,
+                  'lib/assets/physician.png',
+                  scale: 3,
                 ),
-                // login text
                 const SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
+
                 const Text(
-                  'Doctor Sign up',
+                  'Doctor Sign Up',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 35,
+                    fontSize: 45,
                   ),
                 ),
                 const SizedBox(

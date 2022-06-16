@@ -25,53 +25,56 @@ class _PRegisterPageState extends State<PRegisterPage> {
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => DRegisterPage()));
-                  },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        child: Container(
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                              color: Colors.blue,
-                              border: Border.all(color: Colors.white),
-                              borderRadius: BorderRadius.circular(10)),
-                          child: const Text(
-                            'Doctor Sign up',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    const Text(
+                      'Doctor ',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const DRegisterPage()));
+                      },
+                      child: const Text(
+                        'Sign up',
+                        style: TextStyle(
+                          fontSize: 19,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue,
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                  ],
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
+
                 Image.asset(
-                  'lib/assets/medical-checkup.png',
-                  scale: 2.4,
+                  'lib/assets/health-app.png',
+                  scale: 3,
                 ),
-                // login text
                 const SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
+
                 const Text(
-                  'Patient Sign up',
+                  'Patient Sign Up',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 35,
+                    fontSize: 45,
                   ),
                 ),
                 const SizedBox(

@@ -22,8 +22,8 @@ class _DLoginPageState extends State<DLoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  'lib/assets/doctor-visit.png',
-                  scale: 2.3,
+                  'lib/assets/medical-app3.png',
+                  scale: 3,
                 ),
                 // login text
                 const SizedBox(
