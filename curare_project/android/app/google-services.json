@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "873996072679",
+    "project_id": "curare-project-fa03d",
+    "storage_bucket": "curare-project-fa03d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:873996072679:android:152755fae8395b5c0e5442",
+        "android_client_info": {
+          "package_name": "com.example.doctor_demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "873996072679-5f57b934j1k7miu2knou3jd0q1dkojdl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbE-bdLyJZVdnc5O30OideHsctZ34Yelg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "873996072679-5f57b934j1k7miu2knou3jd0q1dkojdl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
