@@ -36,10 +36,11 @@ class _DRegisterPageState extends State<DRegisterPage> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const PRegisterPage()));
+                        // Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //       builder: (context) => const PRegisterPage(),
+                        //     ));
                       },
                       child: const Text(
                         'Sign up',

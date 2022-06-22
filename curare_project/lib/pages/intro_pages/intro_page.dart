@@ -1,9 +1,12 @@
+import 'package:doctor_demo/pages/dregister_page.dart';
 import 'package:doctor_demo/pages/pregister_page.dart';
 import 'package:flutter/material.dart';
 import 'package:slide_to_act/slide_to_act.dart';
 
 class IntroPage extends StatelessWidget {
-  const IntroPage({Key? key}) : super(key: key);
+  const IntroPage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +74,8 @@ class IntroPage extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const PRegisterPage()));
+                          builder: (context) => const DRegisterPage(),
+                        ));
                   },
                 ),
               ),

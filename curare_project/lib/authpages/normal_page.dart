@@ -1,4 +1,5 @@
-import 'package:doctor_demo/pages/login_page.dart';
+import 'package:doctor_demo/authpages/auth_page.dart';
+import 'package:doctor_demo/pages/dlogin_page.dart';
 import 'package:doctor_demo/pages/welcome_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class NormalPage extends StatelessWidget {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: ((context, snapshot) {
           if (snapshot.hasData) {
-            return LoginPage(); // LoginPage has to be changed to userpage
+            return AuthPage(); // AuthPage has to be changed to userpage
           } else {
             return WelcomePage();
           }

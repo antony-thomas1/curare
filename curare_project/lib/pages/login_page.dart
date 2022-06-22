@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 // Patient Login/Sign In page
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({
-    Key? key,
-  }) : super(key: key);
+  final VoidCallback showPRegisterPage;
+  const LoginPage({Key? key, required this.showPRegisterPage})
+      : super(key: key);
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -19,6 +19,7 @@ class _LoginPageState extends State<LoginPage> {
   // text Controllers
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  final user = FirebaseAuth.instance.currentUser;
 
   Future signIn() async {
     await FirebaseAuth.instance.signInWithEmailAndPassword(
@@ -76,6 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: TextField(
+                    controller: _emailController,
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.white),
@@ -99,6 +101,7 @@ class _LoginPageState extends State<LoginPage> {
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: TextField(
                     obscureText: true,
+                    controller: _passwordController,
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.white),
@@ -156,7 +159,9 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       child: Center(
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            signIn();
+                          },
                           child: const Text(
                             'Log in',
                             style: TextStyle(
@@ -185,12 +190,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () {
-                        Navigator.pop(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => PRegisterPage()));
-                      },
+                      onTap: widget.showPRegisterPage,
                       child: const Text(
                         ' Register',
                         style: TextStyle(

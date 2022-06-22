@@ -1,21 +1,46 @@
 import 'package:doctor_demo/pages/dregister_page.dart';
 import 'package:doctor_demo/pages/login_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 // Patient Register/Sign Up page
 
-void main() {
-  runApp(PRegisterPage());
-}
+// void main() {
+//   runApp(PRegisterPage(showLoginPage: () {  },));
+// }
 
 class PRegisterPage extends StatefulWidget {
-  const PRegisterPage({Key? key}) : super(key: key);
+  final VoidCallback showLoginPage;
+  const PRegisterPage({Key? key, required this.showLoginPage})
+      : super(key: key);
 
   @override
   State<PRegisterPage> createState() => _PRegisterPageState();
 }
 
 class _PRegisterPageState extends State<PRegisterPage> {
+  // text Controllers
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _nameController = TextEditingController();
+  final _confirmpasswordController = TextEditingController();
+
+  Future signUp() async {
+    FirebaseAuth.instance.createUserWithEmailAndPassword(
+      email: _emailController.text.trim(),
+      password: _passwordController.text.trim(),
+    );
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    _nameController.dispose();
+    _confirmpasswordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,6 +119,7 @@ class _PRegisterPageState extends State<PRegisterPage> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: TextField(
+                    controller: _nameController,
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.white),
@@ -116,6 +142,7 @@ class _PRegisterPageState extends State<PRegisterPage> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: TextField(
+                    controller: _emailController,
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.white),
@@ -139,6 +166,7 @@ class _PRegisterPageState extends State<PRegisterPage> {
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: TextField(
                     obscureText: true,
+                    controller: _passwordController,
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.white),
@@ -158,13 +186,40 @@ class _PRegisterPageState extends State<PRegisterPage> {
                 const SizedBox(
                   height: 15,
                 ),
-                // Sign_in button
+                // Confirm Password
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: TextField(
+                    obscureText: true,
+                    controller: _confirmpasswordController,
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.blue),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      hintText: 'Confirm Password',
+                      fillColor: Colors.grey[200],
+                      filled: true,
+                    ),
+                  ),
+                ),
+
+                const SizedBox(
+                  height: 15,
+                ),
+                // Sign_Up button
                 Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 25,
                   ),
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      signUp();
+                    },
                     child: Container(
                       padding: const EdgeInsets.all(18),
                       decoration: BoxDecoration(
@@ -200,12 +255,7 @@ class _PRegisterPageState extends State<PRegisterPage> {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => LoginPage()));
-                      },
+                      onTap: widget.showLoginPage,
                       child: const Text(
                         ' Sign in',
                         style: TextStyle(
