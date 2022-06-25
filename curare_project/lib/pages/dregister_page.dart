@@ -11,6 +11,12 @@ class DRegisterPage extends StatefulWidget {
   State<DRegisterPage> createState() => _DRegisterPageState();
 }
 
+// text Controllers
+final _emailController = TextEditingController();
+final _passwordController = TextEditingController();
+final _nameController = TextEditingController();
+final _confirmpasswordController = TextEditingController();
+
 class _DRegisterPageState extends State<DRegisterPage> {
   @override
   Widget build(BuildContext context) {
@@ -36,11 +42,11 @@ class _DRegisterPageState extends State<DRegisterPage> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        // Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //       builder: (context) => const PRegisterPage(),
-                        //     ));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const PRegisterPage(),
+                            ));
                       },
                       child: const Text(
                         'Sign up',
@@ -91,13 +97,14 @@ class _DRegisterPageState extends State<DRegisterPage> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: TextField(
+                    controller: _nameController,
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
+                        borderSide: const BorderSide(color: Colors.white),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
+                        borderSide: const BorderSide(color: Colors.blue),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       hintText: 'Name',
@@ -113,13 +120,14 @@ class _DRegisterPageState extends State<DRegisterPage> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: TextField(
+                    controller: _emailController,
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
+                        borderSide: const BorderSide(color: Colors.white),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
+                        borderSide: const BorderSide(color: Colors.blue),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       hintText: 'Email',
@@ -135,17 +143,42 @@ class _DRegisterPageState extends State<DRegisterPage> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: TextField(
+                    controller: _passwordController,
                     obscureText: true,
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
+                        borderSide: const BorderSide(color: Colors.white),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
+                        borderSide: const BorderSide(color: Colors.blue),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       hintText: 'Password',
+                      fillColor: Colors.grey[200],
+                      filled: true,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                // Confirm Password
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: TextField(
+                    obscureText: true,
+                    controller: _confirmpasswordController,
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(color: Colors.white),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(color: Colors.blue),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      hintText: 'Confirm Password',
                       fillColor: Colors.grey[200],
                       filled: true,
                     ),
@@ -187,7 +220,7 @@ class _DRegisterPageState extends State<DRegisterPage> {
                 const SizedBox(
                   height: 10,
                 ),
-                // not a member? Register button
+                // Already a member ? Doctor Login Button
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -203,7 +236,8 @@ class _DRegisterPageState extends State<DRegisterPage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => DLoginPage()));
+                              builder: (context) => const DLoginPage(),
+                            ));
                       },
                       child: const Text(
                         ' Sign in',

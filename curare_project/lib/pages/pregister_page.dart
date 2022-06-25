@@ -1,18 +1,10 @@
 import 'package:doctor_demo/pages/dregister_page.dart';
 import 'package:doctor_demo/pages/login_page.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 // Patient Register/Sign Up page
-
-// void main() {
-//   runApp(PRegisterPage(showLoginPage: () {  },));
-// }
-
 class PRegisterPage extends StatefulWidget {
-  final VoidCallback showLoginPage;
-  const PRegisterPage({Key? key, required this.showLoginPage})
-      : super(key: key);
+  const PRegisterPage({Key? key}) : super(key: key);
 
   @override
   State<PRegisterPage> createState() => _PRegisterPageState();
@@ -24,13 +16,6 @@ class _PRegisterPageState extends State<PRegisterPage> {
   final _passwordController = TextEditingController();
   final _nameController = TextEditingController();
   final _confirmpasswordController = TextEditingController();
-
-  Future signUp() async {
-    FirebaseAuth.instance.createUserWithEmailAndPassword(
-      email: _emailController.text.trim(),
-      password: _passwordController.text.trim(),
-    );
-  }
 
   @override
   void dispose() {
@@ -122,11 +107,11 @@ class _PRegisterPageState extends State<PRegisterPage> {
                     controller: _nameController,
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
+                        borderSide: const BorderSide(color: Colors.white),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
+                        borderSide: const BorderSide(color: Colors.blue),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       hintText: 'Name',
@@ -145,11 +130,11 @@ class _PRegisterPageState extends State<PRegisterPage> {
                     controller: _emailController,
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
+                        borderSide: const BorderSide(color: Colors.white),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
+                        borderSide: const BorderSide(color: Colors.blue),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       hintText: 'Email',
@@ -169,11 +154,11 @@ class _PRegisterPageState extends State<PRegisterPage> {
                     controller: _passwordController,
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
+                        borderSide: const BorderSide(color: Colors.white),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
+                        borderSide: const BorderSide(color: Colors.blue),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       hintText: 'Password',
@@ -184,7 +169,7 @@ class _PRegisterPageState extends State<PRegisterPage> {
                 ),
 
                 const SizedBox(
-                  height: 15,
+                  height: 10,
                 ),
                 // Confirm Password
                 Padding(
@@ -194,11 +179,11 @@ class _PRegisterPageState extends State<PRegisterPage> {
                     controller: _confirmpasswordController,
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
+                        borderSide: const BorderSide(color: Colors.white),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
+                        borderSide: const BorderSide(color: Colors.blue),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       hintText: 'Confirm Password',
@@ -217,9 +202,7 @@ class _PRegisterPageState extends State<PRegisterPage> {
                     horizontal: 25,
                   ),
                   child: GestureDetector(
-                    onTap: () {
-                      signUp();
-                    },
+                    onTap: () {},
                     child: Container(
                       padding: const EdgeInsets.all(18),
                       decoration: BoxDecoration(
@@ -243,7 +226,7 @@ class _PRegisterPageState extends State<PRegisterPage> {
                 const SizedBox(
                   height: 10,
                 ),
-                // not a member? Register button
+                // Already a member ? Patient Login Button
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -255,7 +238,13 @@ class _PRegisterPageState extends State<PRegisterPage> {
                       ),
                     ),
                     GestureDetector(
-                      onTap: widget.showLoginPage,
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const LoginPage(),
+                            ));
+                      },
                       child: const Text(
                         ' Sign in',
                         style: TextStyle(

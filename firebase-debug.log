@@ -1,0 +1,66 @@
+[debug] [2022-06-24T15:46:23.586Z] ----------------------------------------------------------------------
+[debug] [2022-06-24T15:46:23.588Z] Command:       /usr/local/bin/firebase /home/cyberkid/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase login
+[debug] [2022-06-24T15:46:23.588Z] CLI Version:   11.1.0
+[debug] [2022-06-24T15:46:23.588Z] Platform:      linux
+[debug] [2022-06-24T15:46:23.588Z] Node Version:  v16.15.0
+[debug] [2022-06-24T15:46:23.589Z] Time:          Fri Jun 24 2022 21:16:23 GMT+0530 (India Standard Time)
+[debug] [2022-06-24T15:46:23.589Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-06-24T15:46:23.591Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[debug] [2022-06-24T15:46:24.557Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2022-06-24T15:46:24.558Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[info] i  To change your data collection preference at any time, run `firebase logout` and log in again. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=677215135&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2022-06-24T15:46:47.789Z] ----------------------------------------------------------------------
+[debug] [2022-06-24T15:46:47.790Z] Command:       /usr/local/bin/firebase /home/cyberkid/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase login
+[debug] [2022-06-24T15:46:47.790Z] CLI Version:   11.1.0
+[debug] [2022-06-24T15:46:47.790Z] Platform:      linux
+[debug] [2022-06-24T15:46:47.790Z] Node Version:  v16.15.0
+[debug] [2022-06-24T15:46:47.791Z] Time:          Fri Jun 24 2022 21:16:47 GMT+0530 (India Standard Time)
+[debug] [2022-06-24T15:46:47.791Z] ----------------------------------------------------------------------
+[debug] 
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=239595977&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2022-06-24T15:47:17.078Z] ----------------------------------------------------------------------
+[debug] [2022-06-24T15:47:17.079Z] Command:       /usr/local/bin/firebase /home/cyberkid/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase login
+[debug] [2022-06-24T15:47:17.079Z] CLI Version:   11.1.0
+[debug] [2022-06-24T15:47:17.079Z] Platform:      linux
+[debug] [2022-06-24T15:47:17.079Z] Node Version:  v16.15.0
+[debug] [2022-06-24T15:47:17.080Z] Time:          Fri Jun 24 2022 21:17:17 GMT+0530 (India Standard Time)
+[debug] [2022-06-24T15:47:17.080Z] ----------------------------------------------------------------------
+[debug] 
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[info] i  To change your data collection preference at any time, run `firebase logout` and log in again. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=746814443&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2022-06-24T15:56:49.146Z] ----------------------------------------------------------------------
+[debug] [2022-06-24T15:56:49.148Z] Command:       /usr/local/bin/firebase /home/cyberkid/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase login
+[debug] [2022-06-24T15:56:49.148Z] CLI Version:   11.1.0
+[debug] [2022-06-24T15:56:49.148Z] Platform:      linux
+[debug] [2022-06-24T15:56:49.148Z] Node Version:  v16.15.0
+[debug] [2022-06-24T15:56:49.148Z] Time:          Fri Jun 24 2022 21:26:49 GMT+0530 (India Standard Time)
+[debug] [2022-06-24T15:56:49.149Z] ----------------------------------------------------------------------
+[debug] 
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[info] i  To change your data collection preference at any time, run `firebase logout` and log in again. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=556099139&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...

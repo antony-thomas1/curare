@@ -1,7 +1,6 @@
 import 'package:doctor_demo/pages/dregister_page.dart';
 import 'package:doctor_demo/pages/pregister_page.dart';
 import 'package:flutter/material.dart';
-import 'package:slide_to_act/slide_to_act.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({
@@ -11,7 +10,7 @@ class IntroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color.fromARGB(255, 11, 79, 195),
+      color: const Color.fromARGB(255, 11, 79, 195),
       child: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -55,28 +54,36 @@ class IntroPage extends StatelessWidget {
                 ),
               ),
               Image.asset('lib/assets/dmedical.png'),
-              // for slidable get start
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: SlideAction(
-                  borderRadius: 12,
-                  innerColor: Colors.white,
-                  outerColor: Colors.grey[800],
-                  text: 'Slide to Get Started',
-                  textStyle: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+              // Get Started Button
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const PRegisterPage(),
+                      ));
+                },
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 30),
+                  child: Container(
+                    alignment: Alignment.center,
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                        color: Colors.grey[700],
+                        border: Border.all(color: Colors.white24),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: const Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Text(
+                        "Get Started",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
                   ),
-                  sliderRotate: false,
-                  onSubmit: () {
-                    // Navigate to Patient Sign up
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const DRegisterPage(),
-                        ));
-                  },
                 ),
               ),
             ],

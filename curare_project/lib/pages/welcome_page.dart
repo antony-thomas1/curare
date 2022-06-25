@@ -9,12 +9,6 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
-// Controller to track which page we're on
-  PageController _controller = PageController();
-
-// keep track of which page we're currently on
-  bool onLastPage = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +16,6 @@ class _WelcomePageState extends State<WelcomePage> {
         children: [
           // PageView
           PageView(
-            controller: _controller,
             children: const [
               IntroPage(),
             ],

@@ -1,13 +1,10 @@
 import 'package:doctor_demo/pages/pregister_page.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 // Patient Login/Sign In page
 
 class LoginPage extends StatefulWidget {
-  final VoidCallback showPRegisterPage;
-  const LoginPage({Key? key, required this.showPRegisterPage})
-      : super(key: key);
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -19,15 +16,6 @@ class _LoginPageState extends State<LoginPage> {
   // text Controllers
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-  final user = FirebaseAuth.instance.currentUser;
-
-  Future signIn() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: _emailController.text.trim(),
-      password: _passwordController.text.trim(),
-    );
-  }
-
   @override
   void dispose() {
     _emailController.dispose();
@@ -80,11 +68,11 @@ class _LoginPageState extends State<LoginPage> {
                     controller: _emailController,
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
+                        borderSide: const BorderSide(color: Colors.white),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
+                        borderSide: const BorderSide(color: Colors.blue),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       hintText: 'Email',
@@ -104,11 +92,11 @@ class _LoginPageState extends State<LoginPage> {
                     controller: _passwordController,
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
+                        borderSide: const BorderSide(color: Colors.white),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
+                        borderSide: const BorderSide(color: Colors.blue),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       hintText: 'Password',
@@ -126,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                     // Forgot Password Text(clickable?)
                     Padding(
-                      padding: EdgeInsets.only(right: 30),
+                      padding: const EdgeInsets.only(right: 30),
                       child: GestureDetector(
                         onTap: () {},
                         child: const Text(
@@ -159,9 +147,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       child: Center(
                         child: GestureDetector(
-                          onTap: () {
-                            signIn();
-                          },
+                          onTap: () {},
                           child: const Text(
                             'Log in',
                             style: TextStyle(
@@ -190,7 +176,13 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     GestureDetector(
-                      onTap: widget.showPRegisterPage,
+                      onTap: () {
+                        Navigator.pop(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const PRegisterPage(),
+                            ));
+                      },
                       child: const Text(
                         ' Register',
                         style: TextStyle(

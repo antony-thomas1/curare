@@ -56,11 +56,11 @@ class _DLoginPageState extends State<DLoginPage> {
                   child: TextField(
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
+                        borderSide: const BorderSide(color: Colors.white),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
+                        borderSide: const BorderSide(color: Colors.blue),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       hintText: 'Email',
@@ -79,11 +79,11 @@ class _DLoginPageState extends State<DLoginPage> {
                     obscureText: true,
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
+                        borderSide: const BorderSide(color: Colors.white),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
+                        borderSide: const BorderSide(color: Colors.blue),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       hintText: 'Password',
@@ -100,7 +100,7 @@ class _DLoginPageState extends State<DLoginPage> {
                   // ignore: prefer_const_literals_to_create_immutables
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(right: 30),
+                      padding: const EdgeInsets.only(right: 30),
                       child: GestureDetector(
                         onTap: () {},
                         child: const Text(
@@ -124,7 +124,6 @@ class _DLoginPageState extends State<DLoginPage> {
                     horizontal: 25,
                   ),
                   child: GestureDetector(
-                    // onTap: signIn,
                     child: Container(
                       padding: const EdgeInsets.all(18),
                       decoration: BoxDecoration(
@@ -167,7 +166,7 @@ class _DLoginPageState extends State<DLoginPage> {
                         Navigator.pop(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => DRegisterPage()));
+                                builder: (context) => const DRegisterPage()));
                       },
                       child: const Text(
                         ' Register',
